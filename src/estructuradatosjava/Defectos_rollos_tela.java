@@ -48,7 +48,6 @@ public class Defectos_rollos_tela {
                 mejorTurno = j;
             }
         }
-
         // 3. Promedio por tipo de tela
         System.out.println("\nPromedio de defectos por tipo de tela:");
         for (int i = 0; i < 15; i++) {
