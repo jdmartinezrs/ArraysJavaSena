@@ -23,23 +23,30 @@ public class Asistencia_servicios_religiosos {
     	
     	int sumasemana1 = 0;
     	double promedioSemana1 = 0;
-    	
+    	double promedioSemana = 0;
     	int inicioSemana2 = 8;
     	int finSemana2 = 14;
 		
-    	for (int i =0; i< asistentesMisaDiasMes.length; i++) {
+		
+    	for (int i =1; i< asistentesMisaDiasMes.length; i++) {
     		System.out.println("Escriba el numero de asistentes a la mis el día " + " " + (i+1));
     		asistentesMisaDiasMes[i] = scanner.nextInt();
+			 sumaSemana +=  asistentesMisaDiasMes[i];
+			if((i % 7 == 0)){
+			System.out.println("la suma es: " + sumaSemana);
+            promedioSemana = (double) sumaSemana / 7;
+			System.out.println("El promedio de la semana "+ (i + 1) + " es: "+ promedioSemana);
+			}
     	}
     	
-		for(int i = inicioSemana1 ; i<finSemana1; i++) {
+		/*for(int i = inicioSemana1 ; i<finSemana1; i++) {
 		System.out.println(asistentesMisaDiasMes[i]);
 		sumasemana1 += asistentesMisaDiasMes[i];
 		}
 		promedioSemana1 = (double) sumasemana1 / 7;
 		System.out.println("Suma de la semana 1: " + sumasemana1);
 		System.out.println("promedio de la semana 1: " + promedioSemana1);
-		
+		*/
 		
 		//for(int i = 0; i< asistentesMisaDiasMes[7]; i++ ) {
 			//sumaSemana += asistentesMisaDiasMes[i];
