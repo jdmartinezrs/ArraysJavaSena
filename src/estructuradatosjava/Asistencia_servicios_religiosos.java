@@ -1,5 +1,6 @@
 package estructuradatosjava;
-
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Asistencia_servicios_religiosos {
@@ -36,13 +37,22 @@ public class Asistencia_servicios_religiosos {
 			System.out.println("la suma es: " + sumaSemana);
             promedioSemana = (double) sumaSemana / 7;
 			System.out.println("El promedio de la semana "+ (i + 1) + " es: "+ promedioSemana);
-			
+
+			Arrays.sort(asistentesMisaDiasMes, Collections.reverseOrder());
+for ( i = 0 ; asistentesMisaDiasMes[i]< 3 ; i ++){
+	System.out.println(asistentesMisaDiasMes[i]);
 			}
 			
     	}
-    	for(int i = 0; asistentesMisaDiasMes[i]<8; i++);{
+		 		 
+
+}
+    	/*
+		
+		for(int i = 0; asistentesMisaDiasMes[i]<8; i++);{
         sumaPorSemana += asistentesMisaDiasMes[i];
 		}
+/*
 		/*for(int i = inicioSemana1 ; i<finSemana1; i++) {
 		System.out.println(asistentesMisaDiasMes[i]);
 		sumasemana1 += asistentesMisaDiasMes[i];
@@ -59,4 +69,4 @@ public class Asistencia_servicios_religiosos {
 		//}
 	}
 
-}
+
