@@ -1,4 +1,5 @@
 package estructuradatosjava;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
@@ -6,17 +7,19 @@ import java.util.Scanner;
 public class Asistencia_servicios_religiosos {
 
 	public static void main(String[] args) {
-		// 32. Liturgia y Gestión: Asistencia a Servicios Religiosos Una parroquia comunitaria registra el número de asistentes a la misa diaria durante un mes de 30 días en un vector.
 		
-		
-		//El objetivo es planificar la logística de insumos (hostias y folletos) para el mes siguiente.
-		
-		//El sistema debe identificar los "Días de Alta Afluencia" (festivos o domingos donde la asistencia se duplica) y calcular el promedio de feligreses por semana. 
-		//El programa debe alertar a la administración si la asistencia total cae un 10% respecto al mes anterior para evaluar la implementación de nuevas actividades comunitarias. 
+		//32. Liturgia y Gestión: Asistencia a Servicios Religiosos Una parroquia comunitaria registra el número de asistentes
+		//  a la misa diaria durante un mes de 30 días en un vector.
+		//  El objetivo es planificar la logística de insumos (hostias y folletos) para el mes siguiente.
+		//  El sistema debe identificar los "Días de Alta Afluencia" 
+		// (festivos o domingos donde la asistencia se duplica) y calcular el promedio de feligreses por semana.
+		//  El programa debe alertar a la administración si la asistencia total cae un 10%
+		//  respecto al mes anterior para evaluar la implementación de nuevas actividades comunitarias. 
 
 		Scanner scanner = new Scanner(System.in);
 		
         int [] asistentesMisaDiasMes = new int [30];
+		
     	int sumaSemana = 0;
     	
     	int inicioSemana1 = 0;
@@ -28,8 +31,10 @@ public class Asistencia_servicios_religiosos {
     	int inicioSemana2 = 8;
     	int finSemana2 = 14;
 		int sumaPorSemana = 0;
+		int diaConMasAforo = 0;
+		int diaParaPromedioDeAforo = 2;
 		
-    	for (int i =1; i< asistentesMisaDiasMes.length; i++) {
+    	for (int i = 1; i< asistentesMisaDiasMes.length; i++) {
     		System.out.println("Escriba el numero de asistentes a la mis el día " + " " + (i+1));
     		asistentesMisaDiasMes[i] = scanner.nextInt();
 			 sumaSemana +=  asistentesMisaDiasMes[i];
@@ -37,16 +42,22 @@ public class Asistencia_servicios_religiosos {
 			System.out.println("la suma es: " + sumaSemana);
             promedioSemana = (double) sumaSemana / 7;
 			System.out.println("El promedio de la semana "+ (i + 1) + " es: "+ promedioSemana);
+			Integer[] asistentesMisaDiasMesTransformado = Arrays.stream(asistentesMisaDiasMes)
+                                                    .boxed()
+													.toArray(Integer[]::new);
 
-			Arrays.sort(asistentesMisaDiasMes, Collections.reverseOrder());
-for ( i = 0 ; asistentesMisaDiasMes[i]< 3 ; i ++){
-	System.out.println(asistentesMisaDiasMes[i]);
+			Arrays.sort(asistentesMisaDiasMesTransformado, Collections.reverseOrder());
+		
+	for( i = diaConMasAforo; i < diaParaPromedioDeAforo; i++ ){
+		System.out.println("Mayor afluencia Alta Afluencia en la semana: "+ asistentesMisaDiasMesTransformado[i]);
+	
 			}
 			
     	}
-		 		 
-
 }
+
+/*int diaConMasAforo = 0;
+		int diaParaPromedioDeAforo = 2; */
     	/*
 		
 		for(int i = 0; asistentesMisaDiasMes[i]<8; i++);{
@@ -70,3 +81,4 @@ for ( i = 0 ; asistentesMisaDiasMes[i]< 3 ; i ++){
 	}
 
 
+}
