@@ -12,6 +12,7 @@ public class Asistencia_servicios_religiosos {
 		//  a la misa diaria durante un mes de 30 días en un vector.
 		//  El objetivo es planificar la logística de insumos (hostias y folletos) para el mes siguiente.
 		//  El sistema debe identificar los "Días de Alta Afluencia" 
+
 		// (festivos o domingos donde la asistencia se duplica) y calcular el promedio de feligreses por semana.
 		//  El programa debe alertar a la administración si la asistencia total cae un 10%
 		//  respecto al mes anterior para evaluar la implementación de nuevas actividades comunitarias. 
@@ -24,8 +25,8 @@ public class Asistencia_servicios_religiosos {
     	
     	int inicioSemana1 = 0;
     	int finSemana1 = 7;
+    	int contadorDiasSemana = 0;
     	
-    	int sumasemana1 = 0;
     	double promedioSemana1 = 0;
     	double promedioSemana = 0;
     	int inicioSemana2 = 8;
@@ -34,22 +35,27 @@ public class Asistencia_servicios_religiosos {
 		int diaConMasAforo = 0;
 		int diaParaPromedioDeAforo = 2;
 		
-    	for (int i = 1; i< asistentesMisaDiasMes.length; i++) {
-    		System.out.println("Escriba el numero de asistentes a la mis el día " + " " + (i+1));
+    	for (int i = 0; i< asistentesMisaDiasMes.length; i++) {
+    		System.out.println("Escriba el numero de asistentes a la misa el día " + " " + (i+1));
     		asistentesMisaDiasMes[i] = scanner.nextInt();
+
 			 sumaSemana +=  asistentesMisaDiasMes[i];
-			if((i % 7 == 0)){
+			 contadorDiasSemana++;
+
+			if((i+1) % 7 == 0){
 			System.out.println("la suma es: " + sumaSemana);
-            promedioSemana = (double) sumaSemana / 7;
-			System.out.println("El promedio de la semana "+ (i + 1) + " es: "+ promedioSemana);
+            promedioSemana = (double) sumaSemana / 7.0;
+			System.out.println("El promedio de feligreses por semana"+ (i + 1) + " es: "+ promedioSemana);
+			sumaSemana = 0;
+
 			Integer[] asistentesMisaDiasMesTransformado = Arrays.stream(asistentesMisaDiasMes)
                                                     .boxed()
 													.toArray(Integer[]::new);
 
 			Arrays.sort(asistentesMisaDiasMesTransformado, Collections.reverseOrder());
 		
-	for( i = diaConMasAforo; i < diaParaPromedioDeAforo; i++ ){
-		System.out.println("Mayor afluencia Alta Afluencia en la semana: "+ asistentesMisaDiasMesTransformado[i]);
+	for( int j = diaConMasAforo; j < diaParaPromedioDeAforo; j++ ){
+		System.out.println("Mayor afluencia Alta Afluencia en la semana: "+ asistentesMisaDiasMesTransformado[j]);
 	
 			}
 			
