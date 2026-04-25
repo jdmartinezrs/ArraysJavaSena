@@ -16,8 +16,8 @@ public static void main(String[] args){
 
 Scanner scanner = new Scanner(System.in);
 double Acumulacion= 0;
-double puntos = 0.10;
-double promedioAcumulacion = Acumulacion / puntos;
+int puntos = 10;
+
 double [] centimetroNieveEnPuntosMontana = new  double  [10];
 double maxAcumulacion = centimetroNieveEnPuntosMontana[0];
 
@@ -30,12 +30,14 @@ for (int i = 0 ; i < centimetroNieveEnPuntosMontana.length ; i++){
    }
   
 }
+System.out.println("La ACUMULACIÓN ES: "+Acumulacion);
  for(int nivel = 0; nivel < centimetroNieveEnPuntosMontana.length; nivel ++){
     if (nivel>  maxAcumulacion){
          maxAcumulacion = nivel;
     }
     
    }
+   double promedioAcumulacion = (double) Acumulacion / puntos;
  System.out.println("El promedio de acumulación es: "+ promedioAcumulacion );
   System.out.println(" la zona de descenso más segura del día, es el punto: "+ maxAcumulacion);
 }
