@@ -22,7 +22,9 @@ int puntos = 10;
 
 
 int [] centimetroNieveEnPuntosMontana = new  int  [10];
-
+int [] datos = centimetroNieveEnPuntosMontana;
+int max = datos [0];
+int indiceMax = 0;
 
 for (int i = 0 ; i < centimetroNieveEnPuntosMontana.length ; i++){
     System.out.println("Ingrese el nivel del punto:"+ (i+ 1));
@@ -33,13 +35,16 @@ for (int i = 0 ; i < centimetroNieveEnPuntosMontana.length ; i++){
    }
   
 }
-IntStream intStream = Arrays.stream(centimetroNieveEnPuntosMontana);
- OptionalInt optionalInt = intStream.max();
-    int maxAsInt = optionalInt.getAsInt();
-System.out.println("Maximum number = " + maxAsInt);
+
+for (int i = 1; i< datos.length; i++){
+    if(datos[i] > max){
+        max= datos[i];
+        indiceMax = i;
+    }
+}
    double promedioAcumulacion = (double) Acumulacion / puntos;
  System.out.println("El promedio de acumulación es: "+ promedioAcumulacion );
-  System.out.println(" la zona de descenso más segura del día, es el punto: "+ maxAsInt);
+  System.out.println(" la zona de descenso más segura del día, es el punto: "+ indiceMax +" con una profundidad en la nieve de " +max+ " centimetros");
 }
 
 }
