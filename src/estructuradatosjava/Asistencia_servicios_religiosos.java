@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Asistencia_servicios_religiosos {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		//32. Liturgia y Gestión: Asistencia a Servicios Religiosos Una parroquia comunitaria registra el número de asistentes
 		//  a la misa diaria durante un mes de 30 días en un vector.
@@ -17,73 +17,87 @@ public class Asistencia_servicios_religiosos {
 		//  El programa debe alertar a la administración si la asistencia total cae un 10%
 		//  respecto al mes anterior para evaluar la implementación de nuevas actividades comunitarias. 
 
-        Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
+		
+        int [] asistentesMisaDiasMes = new int [30];
+		
+    	int sumaSemana = 0;
+    	
+    	int contadorDiasSemana = 0;
+    
+    	double promedioSemana = 0;
+    	
+		int diaConMasAforo = 0;
+		int diaParaPromedioDeAforo = 2;
+		int asistenciaTotalmes = 0;
+		
+		for (int mes= 0 ; mes < 2 ; mes ++){
 
-        int[][] asistentes = new int[2][29]; 
+    	for (int i = 0; i< asistentesMisaDiasMes.length; i++) {
+    		System.out.println("Escriba el numero de asistentes a la misa el día " + " " + (i+1));
+    		asistentesMisaDiasMes[i] = scanner.nextInt();
 
-        int[] totalMes = new int[2];
+			 sumaSemana +=  asistentesMisaDiasMes[i];
+			 contadorDiasSemana++;
 
-        for (int mes = 0; mes < 2; mes++) {
+			if((i+1) % 7 == 0){
+			System.out.println("la suma es: " + sumaSemana);
+            promedioSemana = (double) sumaSemana / 7.0;
+			System.out.println("El promedio de feligreses por semana"+ (i + 1) + " es: "+ promedioSemana);
+            asistenciaTotalmes += sumaSemana ;
+			sumaSemana = 0;
 
-            System.out.println("\n===== MES " + (mes + 1) + " =====");
+			Integer[] asistentesMisaDiasMesTransformado = Arrays.stream(asistentesMisaDiasMes)
+                                                    .boxed()
+													.toArray(Integer[]::new);
 
-            int sumaSemana = 0;
+			Arrays.sort(asistentesMisaDiasMesTransformado, Collections.reverseOrder());
 
-            for (int dia = 0; dia < 30; dia++) {
+	int count = 0;
+int lastPrinted = -1;
 
-                System.out.println("Día " + (dia + 1));
-                asistentes[mes][dia] = scanner.nextInt();
+for (int j = 0; j < asistentesMisaDiasMesTransformado.length; j++) {
+    int actual = asistentesMisaDiasMesTransformado[j];
 
-                sumaSemana += asistentes[mes][dia];
-                totalMes[mes] += asistentes[mes][dia];
-
-                
-                if ((dia + 1) % 7 == 0) {
-
-                    System.out.println("Suma semana: " + sumaSemana);
-
-                    double promedio = sumaSemana / 7.0;
-                    System.out.println("promedio de feligreses por semana: " + promedio);
-
-                 
-                    Integer[] semana = new Integer[7];
-
-                    for (int k = 0; k < 7; k++) {
-                        semana[k] = asistentes[mes][dia - k];
-                    }
-
-                    Arrays.sort(semana, Collections.reverseOrder());
-
-                    int count = 0;
-                    int lastPrinted = -1;
-
-                    for (int j = 0; j < semana.length; j++) {
-                        int actual = semana[j];
-
-                        if (actual == lastPrinted) continue;
-
-                        System.out.println("Mayor afluencia: " + actual);
-
-                        lastPrinted = actual;
-                        count++;
-
-                        if (count == 2) break;
-                    }
-
-                    sumaSemana = 0;
-                }
-            }
-        }
-
-        System.out.println("\n===== RESUMEN =====");
-
-        for (int i = 0; i < 2; i++) {
-            System.out.println("Total mes " + (i + 1) + ": " + totalMes[i]);
-        }
-
-       
-        if (totalMes[1] < totalMes[0] * 0.9) {
-            System.out.println("la asistencia cayó más del 10%");
-        }
+    if (actual == lastPrinted) {
+        continue; 
     }
+
+    System.out.println("Mayor afluencia: " + actual);	
+	lastPrinted = actual;
+    count++;
+
+    if (count == 2) break; 
+
+}
+	Arrays.fill(asistentesMisaDiasMes, 0);
+			
+    	}
+}
+System.out.println("El total de asistentes el més fué de : "+ asistenciaTotalmes);
+/*int diaConMasAforo = 0;
+		int diaParaPromedioDeAforo = 2; */
+   	}   	/*
+		
+		for(int i = 0; asistentesMisaDiasMes[i]<8; i++);{
+        sumaPorSemana += asistentesMisaDiasMes[i];
+		}
+/*
+		/*for(int i = inicioSemana1 ; i<finSemana1; i++) {
+		System.out.println(asistentesMisaDiasMes[i]);
+		sumasemana1 += asistentesMisaDiasMes[i];
+		}
+		promedioSemana1 = (double) sumasemana1 / 7;
+		System.out.println("Suma de la semana 1: " + sumasemana1);
+		System.out.println("promedio de la semana 1: " + promedioSemana1);
+		*/
+		
+		//for(int i = 0; i< asistentesMisaDiasMes[7]; i++ ) {
+			//sumaSemana += asistentesMisaDiasMes[i];
+			//System.out.println(asistentesMisaDiasMes[i]);
+			//System.out.println("Suma de la semana "+ (i+1)+ " es igual a: " + sumaSemana);
+		//}
+	}
+
+
 }
