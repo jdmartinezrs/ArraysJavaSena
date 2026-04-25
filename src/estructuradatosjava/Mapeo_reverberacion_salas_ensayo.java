@@ -17,7 +17,7 @@ public class Mapeo_reverberacion_salas_ensayo {
 
     Scanner scanner = new Scanner(System.in);
 
-    long [][] milisegundos = new long[2][2];
+long [][] milisegundos = new long[2][2];
    long menorReverberacion = Long.MAX_VALUE;
    long suma = 0;
    long promedioRecinto = 0; 
@@ -25,7 +25,6 @@ public class Mapeo_reverberacion_salas_ensayo {
    int filaMenor = 0;
    int columnaMenor = 0;
 
-    //int menorPosicion = matriz[0][0];
     
     for (int i = 0; i < milisegundos.length; i ++){
         for(int j = 0; j < milisegundos[i].length; j ++ ){
