@@ -27,9 +27,14 @@ public class Casa_tipografica_santandereana {
         double totalRecibidoPorCasaPorTipografiaTerrazas = precioTipografiaTerrazas * porcentajeRegaliasCasa;
         int eleccionTipografia = 0;
         int respuesta_modificacion = 0;
+ int respuestaMenu;
 
-        int respuestaMenu;
-        
+ String[][]disenadoresytipografias = {
+    {"Gironesa", "Zapatoca", "Lebrijeña"},
+    {"florideña", "piedicuestana", "Cañaveral"},
+    {"Conucos", "Caldas", "San francisco"}
+ };
+       
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bienvenido a la casa tipográfica santandereana ");
         System.out.println("Ingrese 1: para hacer login");
@@ -81,6 +86,8 @@ public class Casa_tipografica_santandereana {
         System.out.println("Bienvenido a la casa tipográfica santandereana " + userName );
         System.out.println("Ingrese 1: para ver las últimas fuentes tipográficas de la casa");
         System.out.println("Ingrese 2: para realizar una vizualización y modificación avanzada a una fuente tipográfica");
+        System.out.println("Ingresa 3: para filtrar las fuentes tipográficas por diseñador.");
+
         respuestaMenu = scanner.nextInt();
         if (respuestaMenu == 1) {
         while(eleccionTipografia !=3){
@@ -254,6 +261,29 @@ public class Casa_tipografica_santandereana {
 
                 }
             }
+        }
+        else if(respuestaMenu == 3){
+        while( !respuestaMenuDiseñadores ==4){
+          System.out.println("Diseñadores de la casa: ");
+           System.out.println ("INGRESE 1 PARA: \n"
+                        +" Juan David Martínez Rojas \n"+
+                        "INGRESE 2 PARA: \n"+
+                        "Juan David Rojas Martínez  \n"+
+                        "INGRESE 3 PARA: \n"+
+                        " David Juan Rojas Martínez\n"+
+                        "INGRESE 4 PARA: \n"+
+                                " Para Salir \n"
+                );
+                int respuestaMenuDiseñadores = scanner.nextInt();
+            switch(respuestaMenuDiseñadores){
+                case 1 :
+                    System.out.println(" Tipografías de Juan David Martínez Rojas ");
+                    for (int i = 0; i< disenadoresytipografias[i].length; i++){
+                    System.out.println(disenadoresytipografias[i]);
+                    }
+            }
+        }
+
         }else {
             System.out.println("respuestano valida");
         }
