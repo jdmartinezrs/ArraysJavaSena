@@ -20,6 +20,7 @@ public class Casa_tipografica_santandereana {
     	int opcionMenuBienvenida = 0;
         double precioTipografiaAB = 70000;
         double precioTipografiaTerrazas = 60000;
+        double precioTipografiaGironesa = 100000;
         double porcentajeRegaliasArtista = 0.70;
         double porcentajeRegaliasCasa = 0.30;
         double totalRecibidoPorArtistaTipografiaAB = precioTipografiaAB * porcentajeRegaliasArtista;
@@ -312,7 +313,9 @@ System.out.println("   ████████████   ██████
                         "Para añadir una textura de estrellas de slash´s  /////\n"+
                         "INGRESE 3 PARA: \n"+
                         "Para añadir una textura de estrellas de Puntos ......\n"+
-                        "INGRESE 4 PARA: \n"+
+                         "INGRESE 4 PARA: \n"+
+                                " Comprar la fuente tipográfica Girónesa \n"+
+                        "INGRESE 5 PARA: \n"+
                                 " Para Salir \n");
                 edicionTipografia1 = scanner.nextInt();
                 
@@ -370,10 +373,23 @@ System.out.println(".......  ......   ......  .......     ......   ......  .....
 System.out.println(" ......  ......   ......  .......     ......   ......  ......   ......  .......  ......  ......  ....... .......  ......");
 System.out.println(" ..............   ......  .......     ..............   ......   ......   ..............  ..............  ...............");
 System.out.println("   ............   ......  .......       ...........    ......   ......    ............    ............    ..............");
-                     }else{
+                     } else if (edicionTipografia1 == 4){
+                System.out.println("¿Desea comprar esta fuente tipográfica AB ? \n" +
+                                "Precio de la fuente tipográfica: " + precioTipografiaGironesa +
+                                " ingrese: 1. para: si /2. para : no");
+                        int respuestaCompraGironesa = scanner.nextInt();
+                                System.out.println("Gracias por tu compra");
+                                System.out.println("Ganacia del artista: " + totalRecibidoPorArtistaTipografiaTerrazas);
+                                System.out.println("Ganancia de la casa: " + totalRecibidoPorCasaPorTipografiaTerrazas);
+                                System.out.println(" Ahora puedes descargar tu Fuente Tipográfica");
+                                System.out.println("*************************************************************");
+                                System.out.println("");
+                                break;
+        }
+                     else{
                         System.out.println("Regresando....");
                      }
-                    }while(edicionTipografia1 != 4);
+                    }while(edicionTipografia1 != 5);
                      break;
                     
                 case 2 :
@@ -385,14 +401,11 @@ System.out.println("   ............   ......  .......       ...........    .....
                     System.out.println("Tipografías de David Juan Rojas Martínez");
                 for (int i = 0 ; i<disenadoresytipografias[2].length; i++){
                 System.out.println((i+1)+" "+ disenadoresytipografias[2][i]);
-                break;
+                
+            } break;
             }
         }
     }
-        }else {
-            System.out.println("Número no valido");
-            
-            }
-        }
-
+        
+    }
     }
