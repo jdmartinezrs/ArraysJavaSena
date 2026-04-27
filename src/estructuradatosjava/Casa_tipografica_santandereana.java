@@ -15,7 +15,7 @@ public class Casa_tipografica_santandereana {
     	String apellidosUsuario = "";
     	String usernameUsuario = "";
     	String paswordUsuario = "";
-    	
+    	int respuestaMenuDiseNadores = 0;
     	int opcionMenuBienvenida = 0;
         double precioTipografiaAB = 70000;
         double precioTipografiaTerrazas = 60000;
@@ -30,9 +30,9 @@ public class Casa_tipografica_santandereana {
  int respuestaMenu;
 
  String[][]disenadoresytipografias = {
-    {"Gironesa", "Zapatoca", "Lebrijeña"},
+    {"Gironesa", "Zapatoca", "Atletico Bucaramanga"},
     {"florideña", "piedicuestana", "Cañaveral"},
-    {"Conucos", "Caldas", "San francisco"}
+    {"Conucos", "Terrazas", "San francisco"}
  };
        
         Scanner scanner = new Scanner(System.in);
@@ -263,7 +263,7 @@ public class Casa_tipografica_santandereana {
             }
         }
         else if(respuestaMenu == 3){
-        while( !respuestaMenuDiseñadores ==4){
+        while( respuestaMenuDiseNadores != 4){
           System.out.println("Diseñadores de la casa: ");
            System.out.println ("INGRESE 1 PARA: \n"
                         +" Juan David Martínez Rojas \n"+
@@ -274,19 +274,75 @@ public class Casa_tipografica_santandereana {
                         "INGRESE 4 PARA: \n"+
                                 " Para Salir \n"
                 );
-                int respuestaMenuDiseñadores = scanner.nextInt();
-            switch(respuestaMenuDiseñadores){
+                 respuestaMenuDiseNadores = scanner.nextInt();
+
+            switch(respuestaMenuDiseNadores){
                 case 1 :
-                    System.out.println(" Tipografías de Juan David Martínez Rojas ");
-                    for (int i = 0; i< disenadoresytipografias[i].length; i++){
-                    System.out.println(disenadoresytipografias[i]);
+                    System.out.println("Tipografías de Juan David Martínez Rojas ");
+                    for (int i = 0; i< disenadoresytipografias[0].length; i++){
+                    System.out.println((i+1)+" "+disenadoresytipografias[0][i]);
                     }
+                    System.out.println("Ingrese el número de la tipografía que desea vizualizar");
+                    int case1Tipografias = scanner.nextInt();
+                    if(case1Tipografias == 1){
+
+System.out.println("      █████       ██████");
+System.out.println("  ████████████    ██████");
+System.out.println(" ██████████████");
+System.out.println(" ██████  ██████   ██████  ███████████   ███████████    ██████ ███████     ████████████    ████████████     ████████████");
+System.out.println("███████  ██████   ██████  ███████████  █████████████   ███████████████   ██████████████  ██████████████   ██████████████");
+System.out.println("███████  ███████  ██████  ███████     ██████   ██████  ███████  ██████  ███████  ██████  ██████  ███████ ███████  ██████");
+System.out.println("███████           ██████  ███████     ██████   ██████  ██████   ██████  ███████  ██████  ███████ ███████  ██████  ██████");
+System.out.println("███████ ███████   ██████  ███████     ██████   ██████  ██████   ██████  ███████  ██████  ██████████             ████████");
+System.out.println("███████ ███████   ██████  ███████     ██████   ██████  ██████   ██████  ███████████████    ██████████       ████████████");
+System.out.println("███████  ██████   ██████  ███████     ██████   ██████  ██████   ██████  ███████              ██████████   ██████  ██████");
+System.out.println("███████  ██████   ██████  ███████     ██████   ██████  ██████   ██████  ███████  ██████         ████████ ███████  ██████");
+System.out.println("███████  ██████   ██████  ███████     ██████   ██████  ██████   ██████  ███████  ██████  ██████  ███████ ███████  ██████");
+System.out.println(" ██████  ██████   ██████  ███████     ██████   ██████  ██████   ██████  ███████  ██████  ██████  ███████ ███████  ██████");
+System.out.println(" ██████████████   ██████  ███████     ██████████████   ██████   ██████   ██████████████  ██████████████  ███████████████");
+System.out.println("   ████████████   ██████  ███████       ███████████    ██████   ██████    ████████████    ████████████    ██████████████");
+                    }
+                    System.out.println("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}");
+                    System.out.println("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}");
+                    System.out.println("Realizar modificaciones a la textura de la fuente");
+
+
+                    int edicionTipografia1 = scanner.nextInt();
+                    if(edicionTipografia1 == 1 )
+System.out.println("       *****       ******");
+System.out.println("  ************    ******");
+System.out.println(" **************");
+System.out.println(" ******  ******   ******  ***********   ***********    ****** *******     ************    ************     ************");
+System.out.println("*******  ******   ******  ***********  *************   ***************   **************  **************   **************");
+System.out.println("*******  *******  ******  *******     ******   ******  *******  ******  *******  ******  ******  ******* *******  ******");
+System.out.println("*******           ******  *******     ******   ******  ******   ******  *******  ******  ******* *******  ******  ******");
+System.out.println("******* *******   ******  *******     ******   ******  ******   ******  *******  ******  **********             ********");
+System.out.println("******* *******   ******  *******     ******   ******  ******   ******  ***************    **********       ************");
+System.out.println("*******  ******   ******  *******     ******   ******  ******   ******  *******              **********   ******  ******");
+System.out.println("*******  ******   ******  *******     ******   ******  ******   ******  *******  ******         ******** *******  ******");
+System.out.println("*******  ******   ******  *******     ******   ******  ******   ******  *******  ******  ******  ******* *******  ******");
+System.out.println(" ******  ******   ******  *******     ******   ******  ******   ******  *******  ******  ******  ******* *******  ******");
+System.out.println(" **************   ******  *******     **************   ******   ******   **************  **************  ***************");
+System.out.println("   ************   ******  *******       ***********    ******   ******    ************    ************    **************");
+                    break;
+                    
+                case 2 :
+                    System.out.println("Tipografías de Juan David Rojas Martínez");
+                    for (int i = 0; i < disenadoresytipografias[1].length; i++){
+                        System.out.println((i+1)+" "+disenadoresytipografias[1][i]);
+                    }break;
+                case 3 :
+                    System.out.println("Tipografías de David Juan Rojas Martínez");
+                for (int i = 0 ; i<disenadoresytipografias[2].length; i++){
+                System.out.println((i+1)+" "+ disenadoresytipografias[2][i]);
+                break;
+            }
+        }
+    }
+        }else {
+            System.out.println("Número no valido");
+            
             }
         }
 
-        }else {
-            System.out.println("respuestano valida");
-        }
-
     }
-}
