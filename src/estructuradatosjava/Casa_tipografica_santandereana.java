@@ -16,6 +16,7 @@ public class Casa_tipografica_santandereana {
     	String usernameUsuario = "";
     	String paswordUsuario = "";
     	int respuestaMenuDiseNadores = 0;
+        int edicionTipografia1 = 0;
     	int opcionMenuBienvenida = 0;
         double precioTipografiaAB = 70000;
         double precioTipografiaTerrazas = 60000;
@@ -30,9 +31,9 @@ public class Casa_tipografica_santandereana {
  int respuestaMenu;
 
  String[][]disenadoresytipografias = {
-    {"Gironesa", "Zapatoca", "Atletico Bucaramanga"},
+    {"Gironesa", "Zapatoca", "Palenque"},
     {"florideña", "piedicuestana", "Cañaveral"},
-    {"Conucos", "Terrazas", "San francisco"}
+    {"Conucos", "Aurora", "San francisco"}
  };
        
         Scanner scanner = new Scanner(System.in);
@@ -302,13 +303,23 @@ System.out.println(" ██████  ██████   ██████
 System.out.println(" ██████████████   ██████  ███████     ██████████████   ██████   ██████   ██████████████  ██████████████  ███████████████");
 System.out.println("   ████████████   ██████  ███████       ███████████    ██████   ██████    ████████████    ████████████    ██████████████");
                     }
-                    System.out.println("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}");
-                    System.out.println("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}");
+                  do{System.out.println("................................................................................................");
+                    System.out.println("................................................................................................");
                     System.out.println("Realizar modificaciones a la textura de la fuente");
+                     System.out.println ("INGRESE 1 PARA: \n"
+                        +" Para añadir una textura de estrellas ******\n"+
+                        "INGRESE 2 PARA: \n"+
+                        "Para añadir una textura de estrellas de slash´s  /////\n"+
+                        "INGRESE 3 PARA: \n"+
+                        "Para añadir una textura de estrellas de Puntos ......\n"+
+                        "INGRESE 4 PARA: \n"+
+                                " Para Salir \n");
+                edicionTipografia1 = scanner.nextInt();
+                
 
+                   
+                    if(edicionTipografia1 == 1 ){
 
-                    int edicionTipografia1 = scanner.nextInt();
-                    if(edicionTipografia1 == 1 )
 System.out.println("       *****       ******");
 System.out.println("  ************    ******");
 System.out.println(" **************");
@@ -324,7 +335,46 @@ System.out.println("*******  ******   ******  *******     ******   ******  *****
 System.out.println(" ******  ******   ******  *******     ******   ******  ******   ******  *******  ******  ******  ******* *******  ******");
 System.out.println(" **************   ******  *******     **************   ******   ******   **************  **************  ***************");
 System.out.println("   ************   ******  *******       ***********    ******   ******    ************    ************    **************");
-                    break;
+
+                     } else if(edicionTipografia1 == 2){
+
+System.out.println("       /////       //////");
+System.out.println("  ////////////    //////");
+System.out.println(" //////////////");
+System.out.println(" //////  //////   //////  ///////////   ///////////    ////// ///////     ////////////    ////////////     ////////////");
+System.out.println("///////  //////   //////  ///////////  /////////////   ///////////////   //////////////  //////////////   //////////////");
+System.out.println("///////  ///////  //////  ///////     //////   //////  ///////  //////  ///////  //////  //////  /////// ///////  //////");
+System.out.println("///////           //////  ///////     //////   //////  //////   //////  ///////  //////  /////// ///////  //////  //////");
+System.out.println("/////// ///////   //////  ///////     //////   //////  //////   //////  ///////  //////  //////////             ////////");
+System.out.println("/////// ///////   //////  ///////     //////   //////  //////   //////  ///////////////    //////////       ////////////");
+System.out.println("///////  //////   //////  ///////     //////   //////  //////   //////  ///////              //////////   //////  //////");
+System.out.println("///////  //////   //////  ///////     //////   //////  //////   //////  ///////  //////         //////// ///////  //////");
+System.out.println("///////  //////   //////  ///////     //////   //////  //////   //////  ///////  //////  //////  /////// ///////  //////");
+System.out.println(" //////  //////   //////  ///////     //////   //////  //////   //////  ///////  //////  //////  /////// ///////  //////");
+System.out.println(" //////////////   //////  ///////     //////////////   //////   //////   //////////////  //////////////  ///////////////");
+System.out.println("   ////////////   //////  ///////       ///////////    //////   //////    ////////////    ////////////    //////////////");
+
+                     } else if(edicionTipografia1 == 3){
+System.out.println("       .....       ......                 .........");
+System.out.println("  ............    ......                 ........");
+System.out.println(" ..............");
+System.out.println(" ......  ......   ......  ...........   ...........    ...... .......     ............    ............     ............");
+System.out.println(".......  ......   ......  ...........  .............   ...............   ..............  ..............   ..............");
+System.out.println(".......  .......  ......  .......     ......   ......  .......  ......  .......  ......  ......  ....... .......  ......");
+System.out.println(".......           ......  .......     ......   ......  ......   ......  .......  ......  ....... .......  ......  ......");
+System.out.println("....... .......   ......  .......     ......   ......  ......   ......  .......  ......  ..........             ........");
+System.out.println("....... .......   ......  .......     ......   ......  ......   ......  ...............    ..........       ............");
+System.out.println(".......  ......   ......  .......     ......   ......  ......   ......  .......              ..........   ......  ......");
+System.out.println(".......  ......   ......  .......     ......   ......  ......   ......  .......  ......         ........ .......  ......");
+System.out.println(".......  ......   ......  .......     ......   ......  ......   ......  .......  ......  ......  ....... .......  ......");
+System.out.println(" ......  ......   ......  .......     ......   ......  ......   ......  .......  ......  ......  ....... .......  ......");
+System.out.println(" ..............   ......  .......     ..............   ......   ......   ..............  ..............  ...............");
+System.out.println("   ............   ......  .......       ...........    ......   ......    ............    ............    ..............");
+                     }else{
+                        System.out.println("Regresando....");
+                     }
+                    }while(edicionTipografia1 != 4);
+                     break;
                     
                 case 2 :
                     System.out.println("Tipografías de Juan David Rojas Martínez");
